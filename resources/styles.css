@@ -1,0 +1,160 @@
+/* Styles for index DW Photography */
+
+/*
+Fonts:
+  Handwritting: Indie Flower
+  Text: Ubuntu
+
+*/
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar{
+  height: 80px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background-color: #fff;
+  color: black;
+  padding: 0 0 5px 0;
+  font-size: 1.2em;
+  border-bottom: solid 2px black;
+
+}
+
+navbar-brand {
+  float: left;
+  min-height: 55px;
+  padding: 0 15px 5px;
+  align-items: center;
+}
+
+.navbar-header img{
+  height: 60px;
+  padding: 2px;
+}
+
+.navbar .navbar-nav .active a,
+.navbar .navbar-nav .active a:focus,
+.navbar .navbar-nav a:hover {
+  color: darkgrey;
+  background-color: #FFF;
+}
+
+.navbar .navbar-nav li a {
+  color: black;
+  background-color: #FFF;
+}
+
+.error-msg {
+  display: none;
+  color: red;
+
+}
+
+.home-image{
+  width: 100%;
+  height: auto;
+  padding: 2px;
+
+}
+
+.image-block {
+  background-color: #fff;
+}
+
+#left,
+#middle,
+#right {
+  border: solid 2px black;
+  margin: 0px 0px;
+  padding: 5px;
+}
+
+#left-imageg,
+#middle-imageg,
+#right-imageg {
+  display: none;
+}
+
+.img-text{
+  text-align: center;
+  align-items:: center;
+  font-size: 32px;
+  color: black;
+  margin: 0;
+}
+
+
+
+.footer, footer {
+  background-color: #000;
+}
+
+footer {
+  width: 100%;
+  border-radius: 0px;
+  margin-top: 0;
+  color: white;
+  padding: 0 0 10px 0;
+  font-size: 1.2em;
+  border-top: solid 2px black;
+}
+
+footer .fab,
+footer a {
+  align-content: center;
+  color: white;
+}
+
+.copyright {
+  display: flex;
+  padding-top: 20px;
+}
+
+.copywight h5{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 0.85em;
+}
+
+input, select, textarea {
+  width: 75%;
+  border: 2px solid #eee;
+}
+
+#send {
+  width: 15%;
+}
+
+
+.side-banner {
+  height: auto;
+}
+
+.side-image {
+  height: auto;
+  width: auto;
+  border: solid 1px black;
+  padding: 3px;
+  margin: 5px;
+
+}
+
+.social{
+  margin-bottom:1%;
+}
+
+
+/* Phone screens */
+@media only screen and (max-width: 768px) {
+  .copywight h3{
+    text-align: center;
+    font-size: 0.7em;
+  }
+  .image-top {
+    display: none;
+  }
+  }

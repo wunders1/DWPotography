@@ -1,0 +1,263 @@
+<!-- DW Photography Contact HTML by Wanders -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DW Photography</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Link -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Font Links -->
+      <!--  Font Awesome -->
+      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+      <!-- Chosen Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Ubuntu:300,400,500,700" rel="stylesheet">
+    <!--  CSS Stylying -->
+      <link href="resources/styles.css" type="text/css" rel="stylesheet">
+    <!-- Bootstrap JavaScript -->
+      <script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="btn" class="navbar-toggle" data-toggle="collapse"
+             data-target="#myNavbar">
+              <span class="fas fa-bars"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="resources/images/DW-Photography.png"></a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Gear</a></li>
+              <li><a href="#">Shop</a></li>
+              <li class="active"><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+       <div class="row">
+          <div class="col-sm-9">
+              <h2>
+              Contact Us
+            </h2>
+            <p>
+              Please leave your details below with a short description regarding your enquiry.
+              One of our staff will get back to you shortly to discuss any questions you may have.
+            </p>
+          <div class="form">
+            <div class="contact-form">
+            <form action="#"  method="POST" onsubmit ="validate()" class="simple-form">
+
+                <div>
+                  <label for="first-name" id="first-name-title">First Name:
+                  <span class="required">*</span></label>
+                  <div class="form-field">
+                    <input type="text" name="first-name" id="first-name"/>
+                  </div>
+                  <p class="error-msg" id="first-name-error">Please enter your name</p>
+                </div>
+                <div>
+                  <label for="last-name" cid="last-name-title">Last Name:
+                  <span class="required">*</span></label>
+                  <div class="form-field">
+                    <input type="text" name="last-name" id="last-name"/>
+                  </div>
+                  <p class="error-msg" id="last-name-error">Please enter your surname</p>
+                </div>
+                <div>
+                  <label for="e-mail" id="email-title">E-mail:
+                  <span class="required">*</span></label>
+                  <div class="form-field">
+                    <input type="email" name="e-mail" id="e-mail"/>
+                  </div>
+                    <p class="error-msg" id="email-error">Please enter a valid e-mail address</p>
+                </div>
+                <div>
+                  <label for="phone" id="number-title">Phone Number:
+                    <span class="required">*</span></label>
+                  <div class="form-field">
+                    <input type="text" name="phone"  id="phoneNo"/>
+                    <p>xxxx xxx xxx or xx xxxx xxxx format only</p>
+                  </div>
+                    <p class="error-msg" id="phone-error">Please enter your phone number</p>
+                </div>
+                <div>
+                  <label for="reason" id="reason-title">Reason for contact:</label><br/>
+                  <select name="reason" id="reason">
+                    <option>General Enquiry</option>
+                    <option>Booking</option>
+                    <option selected>Purchase</option>
+                    <option>Gear</option>
+                    <option>Other</option>
+                  </select><br/>
+                </div>
+              <div>
+                <label for="enquiry" id="enquiry-title">Please type your enquiry below:</label><br/>
+                <textarea cols="40" rows="10" name="enquiry" id="enquiry"></textarea><br/>
+                <button onclick="fname()" style="margin: 5px" type="button">Show fname Errors</button><br/>
+                <button onclick="lname()" style="margin: 5px" type="button">Show lname Errors</button><br/>
+                <button onclick="mail()" style="margin: 5px" type="button">Show mail Errors</button><br/>
+                <button onclick="phone()" style="margin: 5px" type="button">Show phone Errors</button><br/>
+                <button onclick="validate()" style="margin: 5px" type="button">Validate Errors</button><br/>
+                <button class="btn btn-primary"onclick="fname(); lname(); mail(); phone() " type="button" name="submit" value="Submit"  id="send">
+                  Submit
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 side-banner">
+          <div class="boo img-responsive">
+            <img src="resources/images/home/image-5.png" class="side-image img-fluid img-responsive image-top"></>
+            <img src="resources/images/home/image-4.png" class="side-image img-fluid img-responsive image-bottom"></>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class="container-fluid footer">
+        <footer class="container text-center">
+          <div class="row">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4 social">
+              <h3>Connect with us</h3>
+              <a href="#" ><i class= "fab fa-facebook"></i></a>
+              <a href="#" ><i class="fab fa-500px"></i></a>
+              <a href="#" ><i class="fab fa-instagram"></i></a>
+              <a href="#" ><i class="fab fa-flickr"></i></a>
+              <a href="#" ><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="col-sm-4 copywight">
+              <h3><a class="far fa-copyright"></a> DW Photography 2018</h3>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+    <script>
+    // variables
+    let firstNamev = document.getElementById("first-name").value;
+    let firstName = document.getElementById("first-name");
+    let surnamev = document.getElementById("last-name").value;
+    let surname = document.getElementById("last-name");
+    let emailv = document.getElementById("e-mail").value;
+    let email = document.getElementById("e-mail");
+    let phoneNumberv = document.getElementById("phoneNo").value;
+    let phoneNumber = document.getElementById("phoneNo");
+    let reason = document.getElementById("reason");
+    let comment = document.getElementById("enquiry");
+    let nameFail = document.getElementById("first-name-error");
+    let surnameFail = document.getElementById("last-name-error");
+    let emailFail = document.getElementById("email-error");
+    let phoneFail = document.getElementById("phone-error");
+
+    let emailreg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
+    let phoneregm = /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+    let phonereg = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+
+
+    //name validation
+    function fname(){
+      if (firstNamev == "" || firstNamev != NaN) {
+      firstName.style.border = "2px solid red";
+      nameFail.style.display = "inline";
+      }
+    }
+
+    function lname(){
+      if (surnamev == "" || surnamev != NaN) {
+      surname.style.border = "2px solid red";
+      surnameFail.style.display = "inline";
+      }
+    }
+
+    //e-mail vaildation
+    function mail(){
+      if (emailv != emailreg) {
+      email.style.border = "2px solid red";
+      emailFail.style.display = "inline";
+      }
+    }
+
+    // Phone validation
+    function phone(){
+      if (phoneNumberv != phoneregm || phoneNumberv != phonereg) {
+      phoneNumber.style.border = "2px solid red";
+      phoneFail.style.display = "inline";
+      }
+    }
+
+    function validate() {
+      if(firstNamev!="" && surnamev!="" && emailv!="" && phoneNumberv!=""){
+
+          if (email.match(emailreg)){
+            return true;
+
+            if(firstNamev == "" || firstNamev != NaN){
+              return true;
+
+                if (surnamev == "" || surnamev != NaN) {
+                  return true;
+
+                  if (phoneNumberv.match(phonereg) || phoneNumberv.match(phoneregm)) {
+                    return true;
+
+                  } else {
+                    alert("Please enter your phone number");
+                    phoneNumber.style.border = "2px solid red";
+                    phoneFail.style.display = "inline";
+                    return false;
+                  }
+
+                } else {
+                  alert("Please enter your surname");
+                  surname.style.border = "2px solid red";
+                  surnameFail.style.display = "inline";
+                  return false;
+                }
+
+
+            } else {
+              alert("Please enter your first name");
+              firstName.style.border = "2px solid red";
+              nameFail.style.display = "inline";
+              return false;
+            }
+
+          }
+          else {
+            alert("Please enter a valid e-mail address");
+            email.style.border = "2px solid red";
+            emailFail.style.display = "inline";
+            return false;
+          }
+      }
+      else {
+        alert('Please fill in all required fields');
+        firstName.style.border = "2px solid red";
+        nameFail.style.display = "inline";
+        surname.style.border = "2px solid red";
+        surnameFail.style.display = "inline";
+        email.style.border = "2px solid red";
+        emailFail.style.display = "inline";
+        phoneNumber.style.border = "2px solid red";
+        phoneFail.style.display = "inline";
+        return false;
+      }
+    }
+
+    </script>
+  </body>
+</html>
