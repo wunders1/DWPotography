@@ -1,17 +1,21 @@
 
     // variables
-    let firstName = document.getElementById("first-name").value;
-    let surname = document.getElementById("last-name").value;
-    let email = document.getElementById("e-mail").value;
-    let phoneNumber = document.getElementById("phone").value;
+    let firstName = document.getElementById("first-name");
+    let nameFail = document.getElementById("first-name-error");
+    let surname = document.getElementById("last-name");
+    let surnameFail = document.getElementById("last-name-error");
+    let email = document.getElementById("e-mail");
+    let emailFail = document.getElementById("email-error");
+    let phoneNumber = document.getElementById("phoneNo");
+    let phoneFail = document.getElementById("phone-error");
     let reason = document.getElementById("reason");
     let comment = document.getElementById("enquiry");
-    let nameFail = document.getElementById("first-name-error");
-    let surnameFail = document.getElementById("last-name-error");
-    let emailFail = document.getElementById("email-error");
-    let phoneFail = document.getElementById("phone-error");
 
     let emailreg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
+    let phoneregm = /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+    let phonereg = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+
+
 
     function validate () {
       if(firstName!="" && surname!="" && email!="" && phoneNumber!="")

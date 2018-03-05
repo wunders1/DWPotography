@@ -49,7 +49,7 @@ navbar-brand {
 }
 
 .error-msg {
-  display: none;
+  visibility: hidden;
   color: red;
 
 }
