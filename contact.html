@@ -87,7 +87,7 @@
                     <span class="required">*</span></label>
                   <div class="form-field">
                     <input type="text" name="phone"  id="phone"/>
-                    <p>xxxx xxx xxx or xx xxxx xxxx format only</p>
+                    <p class="format">xxxx xxx xxx or xx xxxx xxxx format only</p>
                   </div>
                     <p class="error-msg" id="phone-error">Please enter your phone number</p>
                 </div>
@@ -106,11 +106,13 @@
               <div>
                 <label for="enquiry" id="enquiry-title">Please type your enquiry below:</label><br/>
                 <textarea cols="40" rows="10" name="enquiry" id="enquiry"></textarea><br/>
+                <!-- test validation buttons - only use when testing, dissable all other times
                 <button onclick="fname()" style="margin: 5px" type="button">Show fname Errors</button><br/>
                 <button onclick="lname()" style="margin: 5px" type="button">Show lname Errors</button><br/>
                 <button onclick="mail()" style="margin: 5px" type="button">Show mail Errors</button><br/>
-                <button onclick="phone()" style="margin: 5px" type="button">Show phone Errors</button><br/>
-                <button onclick="reason()" style="margin: 5px" type="button">Show reason Errors</button><br/>
+                <button onclick="number()" style="margin: 5px" type="button">Show phone Errors</button><br/>
+                <button onclick="contact()" style="margin: 5px" type="button">Show reason Errors</button><br/>
+              -->
                 <button class="btn btn-primary"onclick="validate()" type="button" name="submit" value="Submit"  id="send">
                   Submit
                 </button>
@@ -122,8 +124,8 @@
       </div>
       <div class="col-sm-3 side-banner">
           <div class="boo img-responsive">
-            <img src="resources/images/home/image-5.png" class="side-image img-fluid img-responsive image-top"></>
-            <img src="resources/images/home/image-4.png" class="side-image img-fluid img-responsive image-bottom"></>
+            <img src="resources/images/home/Image-5.png" class="side-image img-fluid img-responsive image-top"></>
+            <img src="resources/images/home/Image-4.png" class="side-image img-fluid img-responsive image-bottom"></>
           </div>
       </div>
       </div>
@@ -156,7 +158,8 @@
       let surnameFail = document.getElementById("last-name-error");
       let email = document.getElementById("e-mail");
       let emailFail = document.getElementById("email-error");
-
+      let phoneNumber = document.getElementById("phone");
+      let phoneFail = document.getElementById("phone-error");
       let reason = document.getElementById("reason");
       let reasonFail = document.getElementById("reason-error");
       let comment = document.getElementById("enquiry");
@@ -165,7 +168,8 @@
       let phoneregm = /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
       let phonereg = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
 
-      /*test first name validation */
+/* test validation
+      //test first name validation
       function fname(){
         if (firstName.value === "") {
         firstName.style.border = "2px solid red";
@@ -177,7 +181,7 @@
         }
       }
 
-      /*test surname validation */
+      //test surname validation
       function lname(){
         if (surname.value === "") {
         surname.style.border = "2px solid red";
@@ -189,7 +193,7 @@
         }
       }
 
-      /*test e-mail validation */
+      //test e-mail validation
       function mail(){
         if (email.value === "") {
         email.style.border = "2px solid red";
@@ -201,41 +205,28 @@
         }
       }
 
-      /*test phone number validation */
-      let phoneNumber = document.getElementById("phone");
-      let phoneFail = document.getElementById("phone-error");
-      function phone(){
-        if(phoneNumber.value == NaN){
-          phoneFail.style.visibility = "visible"
+      //test phone number validation
+      function number(){
+        if (phoneNumber.value === ""){
+          phoneNumber.style.border = "2px solid red";
+          phoneFail.style.visibility = "visible";
         }
         else {
-          phoneFail.style.visibilty = "hidden"
+          phoneNumber.style.border = "2px solid #eee";
+          phoneFail.style.visibility = "hidden";
         }
       }
 
-      /*
-     //test phone validation
-      function phone(){
-        if (phoneNumber.value == "") {
-        phoneNumber.style.border = "2px solid red";
-          phoneFail.style.visibility = "visible";
-          }
-          else {
-            phoneNumber.style.border = "2px solid #eee";
-            phoneFail.style.visibility = "hidden";
-          }
-        }
-
       //test reason validation
-          function reason(){
-            if(reason == "default"){
-              reasonFail.style.visibility = "visible";
-            }
-            else {
-            reasonFail.style.visibility = "hidden";
-            }
-          }
-
+      function contact(){
+        if(reason.value == "default"){
+         reasonFail.style.visibility = "visible";
+        }
+        else {
+          reasonFail.style.visibility = "hidden";
+        }
+      }
+      */
 
           // Whole validation
           function validate(){
@@ -255,7 +246,7 @@
               surname.style.border = "2px solid #eee";
               surnameFail.style.visibility = "hidden";
             }
-            if (email.value != emailreg) {
+            if (email.value === "") {
               email.style.border = "2px solid red";
               emailFail.style.visibility = "visible";
             }
@@ -263,7 +254,7 @@
               email.style.border = "2px solid #eee";
               emailFail.style.visibility = "hidden";
             }
-            if(phoneNumber.value != phoneregm || phoneNumber.value != phonereg)) {
+            if(phoneNumber.value === "") {
             phoneNumber.style.border = "2px solid red";
             phoneFail.style.visibility = "visible";
           }
@@ -271,14 +262,14 @@
             phoneNumber.style.border = "2px solid #eee";
             phoneFail.style.visibility = "hidden";
           }
-            if(reason === "default"){
+            if(reason.value === "default"){
               reasonFail.style.visibility = "visible";
             }
             else {
             reasonFail.style.visibility = "hidden";
             }
           }
-      */
+
 
     </script>
   </body>

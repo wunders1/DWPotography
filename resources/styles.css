@@ -129,6 +129,9 @@ input, select, textarea {
   width: 15%;
 }
 
+.format {
+  margin: 0;
+}
 
 .side-banner {
   height: auto;
