@@ -228,49 +228,47 @@
       }
       */
 
-          // Whole validation
-          function validate(){
-            if (firstName.value === "") {
-            firstName.style.border = "2px solid red";
-            nameFail.style.visibility = "visible";
-            }
-            else {
-              firstName.style.border = "2px solid #eee";
-              nameFail.style.visibility = "hidden";
-            }
-            if (surname.value === "") {
-            surname.style.border = "2px solid red";
-            surnameFail.style.visibility = "visible";
-            }
-            else {
-              surname.style.border = "2px solid #eee";
-              surnameFail.style.visibility = "hidden";
-            }
-            if (email.value === "") {
-              email.style.border = "2px solid red";
-              emailFail.style.visibility = "visible";
-            }
-            else {
-              email.style.border = "2px solid #eee";
-              emailFail.style.visibility = "hidden";
-            }
-            if(phoneNumber.value === "") {
-            phoneNumber.style.border = "2px solid red";
-            phoneFail.style.visibility = "visible";
-          }
+   // one click validation
+    function validate(){
+      if (firstName.value === "") {
+        firstName.style.border = "2px solid red";
+        nameFail.style.visibility = "visible";
+       }
+        else {
+          irstName.style.border = "2px solid #eee";
+          nameFail.style.visibility = "hidden";
+        }
+      if (surname.value === "") {
+        surname.style.border = "2px solid red";
+        surnameFail.style.visibility = "visible";
+        }
           else {
+            surname.style.border = "2px solid #eee";
+            surnameFail.style.visibility = "hidden";
+          }
+      if (email.value === "") {
+        email.style.border = "2px solid red";
+        emailFail.style.visibility = "visible";
+        }
+          else {
+            email.style.border = "2px solid #eee";
+            emailFail.style.visibility = "hidden";
+        }
+      if(phoneNumber.value === "") {
+        phoneNumber.style.border = "2px solid red";
+        phoneFail.style.visibility = "visible";
+        }
+        else {
             phoneNumber.style.border = "2px solid #eee";
             phoneFail.style.visibility = "hidden";
           }
-            if(reason.value === "default"){
-              reasonFail.style.visibility = "visible";
-            }
-            else {
-            reasonFail.style.visibility = "hidden";
-            }
+      if(reason.value === "default"){
+          reasonFail.style.visibility = "visible";
           }
-
-
+          else {
+          reasonFail.style.visibility = "hidden";
+          }
+    }
     </script>
   </body>
 </html>
