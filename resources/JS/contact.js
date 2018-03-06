@@ -1,103 +1,120 @@
+// variables
+let firstName = document.getElementById("first-name");
+let nameFail = document.getElementById("first-name-error");
+let surname = document.getElementById("last-name");
+let surnameFail = document.getElementById("last-name-error");
+let email = document.getElementById("e-mail");
+let emailFail = document.getElementById("email-error");
+let phoneNumber = document.getElementById("phone");
+let phoneFail = document.getElementById("phone-error");
+let reason = document.getElementById("reason");
+let reasonFail = document.getElementById("reason-error");
+let comment = document.getElementById("enquiry");
 
-    // variables
-    let firstName = document.getElementById("first-name");
-    let nameFail = document.getElementById("first-name-error");
-    let surname = document.getElementById("last-name");
-    let surnameFail = document.getElementById("last-name-error");
-    let email = document.getElementById("e-mail");
-    let emailFail = document.getElementById("email-error");
-    let phoneNumber = document.getElementById("phoneNo");
-    let phoneFail = document.getElementById("phone-error");
-    let reason = document.getElementById("reason");
-    let comment = document.getElementById("enquiry");
+//redular expressions
+let emailreg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+let phoneregm = /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+let phonereg = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
 
-    let emailreg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
-    let phoneregm = /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
-    let phonereg = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-
-
-
-    function validate () {
-      if(firstName!="" && surname!="" && email!="" && phoneNumber!="")
-      {
-          if (email.match(emailreg)){
-
-            if(firstName == " " || firstName != NaN){
-
-                if (surname == " " || surname != NaN) {
-
-                  if (phoneNumber == " " || phoneNumber == NaN) {
-
-                  } else {
-                    phoneNumber.style.border = "2px solid red";
-                    phoneFail.style.display = "inline";
-                    return false;
-                  }
-
-                } else {
-                  surname.style.border = "2px solid red";
-                  surnameFail.style.display = "inline";
-                  return false;
-                }
-
-
-            } else {
-              firstName.style.border = "2px solid red";
-              nameFail.style.display = "inline";
-              return false;
-            }
-
-          }
-          else {
-            email.style.border = "2px solid red";
-            emailFail.style.display = "inline";
-            return false;
-          }
-      }
-      else {
-        alert('Whoops!!');
-        firstName.style.border = "2px solid red";
-        nameFail.style.display = "inline";
-        surname.style.border = "2px solid red";
-        surnameFail.style.display = "inline";
-        email.style.border = "2px solid red";
-        emailFail.style.display = "inline";
-        phoneNumber.style.border = "2px solid red";
-        phoneFail.style.display = "inline";
-        return false;
-      }
+// one click validation
+function validate(){
+if (firstName.value === "") {
+  firstName.style.border = "2px solid red";
+  nameFail.style.visibility = "visible";
+ }
+  else {
+    firstName.style.border = "2px solid #eee";
+    nameFail.style.visibility = "hidden";
+  }
+if (surname.value === "") {
+  surname.style.border = "2px solid red";
+  surnameFail.style.visibility = "visible";
+  }
+    else {
+      surname.style.border = "2px solid #eee";
+      surnameFail.style.visibility = "hidden";
     }
-
-
-  /*
-    //name validation
-    function fname(){
-      if (firstName == " " || firstName != NaN) {
-      firstName.style.border = "2px solid red";
-      nameFail.style.display = "inline";
-      }
-    }
-
-    function lname(){
-      if (surname == " " || surname != NaN) {
-      surname.style.border = "2px solid red";
-      surnameFail.style.display = "inline";
-      }
-    }
-
-    //e-mail vaildation
-    function mail(){
-      if (email != emailreg) {
+if (email.value.match(emailreg)) {
+  email.style.border = "2px solid #eee";
+  emailFail.style.visibility = "hidden";
+  }
+    else {
       email.style.border = "2px solid red";
-      emailFail.style.display = "inline";
-      }
+      emailFail.style.visibility = "visible";
+  }
+if(phoneNumber.value.match(phoneregm) || phoneNumber.value.match(phonereg)) {
+  phone.style.border = "2px solid #eee";
+  phoneFail.style.visibility = "hidden";;
+  }
+  else {
+    phone.style.border = "2px solid red";
+    phoneFail.style.visibility = "visible";
     }
+if(reason.value === "default"){
+    reasonFail.style.visibility = "visible";
+    }
+    else {
+    reasonFail.style.visibility = "hidden";
+    }
+}
 
-    // Phone validation
-    function phone(){
-      if (phoneNumber == " " || phoneNumber == NaN) {
-      phoneNumber.style.border = "2px solid red";
-      phoneFail.style.display = "inline";
-      }
-    }
+
+/* test validation
+//test first name validation
+function fname(){
+  if (firstName.value === "") {
+  firstName.style.border = "2px solid red";
+  nameFail.style.visibility = "visible";
+  }
+  else {
+    firstName.style.border = "2px solid #eee";
+    nameFail.style.visibility = "hidden";
+  }
+}
+
+//test surname validation
+function lname(){
+  if (surname.value === "") {
+  surname.style.border = "2px solid red";
+  surnameFail.style.visibility = "visible";
+  }
+  else {
+    surname.style.border = "2px solid #eee";
+    surnameFail.style.visibility = "hidden";
+  }
+}
+
+//test e-mail validation
+function mail(){
+if (email.value.match(emailreg)) {
+  email.style.border = "2px solid #eee";
+  emailFail.style.visibility = "hidden";
+  }
+    else {
+      email.style.border = "2px solid red";
+      emailFail.style.visibility = "visible";
+  }
+}
+
+//test phone number validation
+function number(){
+if (phoneNumber.value.match(phoneregm) || phoneNumber.value.match(phonereg)) {
+  phone.style.border = "2px solid #eee";
+  phoneFail.style.visibility = "hidden";
+  }
+    else {
+    phone.style.border = "2px solid red";
+    phoneFail.style.visibility = "visible";
+}
+}
+
+//test reason validation
+function contact(){
+  if(reason.value == "default"){
+   reasonFail.style.visibility = "visible";
+  }
+  else {
+    reasonFail.style.visibility = "hidden";
+  }
+}
 */

@@ -6,7 +6,7 @@ Fonts:
   Text: Ubuntu
 
 */
-
+/* Universal Header CSS */
 html, body {
   margin: 0px;
   padding: 0px;
@@ -21,7 +21,9 @@ html, body {
   padding: 0 0 5px 0;
   font-size: 1.2em;
   border-bottom: solid 2px black;
-
+}
+#myNavbar {
+  z-index: 6;
 }
 
 navbar-brand {
@@ -48,47 +50,7 @@ navbar-brand {
   background-color: #FFF;
 }
 
-.error-msg {
-  visibility: hidden;
-  color: red;
-
-}
-
-.home-image{
-  width: 100%;
-  height: auto;
-  padding: 2px;
-
-}
-
-.image-block {
-  background-color: #fff;
-}
-
-#left,
-#middle,
-#right {
-  border: solid 2px black;
-  margin: 0px 0px;
-  padding: 5px;
-}
-
-#left-imageg,
-#middle-imageg,
-#right-imageg {
-  display: none;
-}
-
-.img-text{
-  text-align: center;
-  align-items:: center;
-  font-size: 32px;
-  color: black;
-  margin: 0;
-}
-
-
-
+/* Universal Footer CSS */
 .footer, footer {
   background-color: #000;
 }
@@ -120,6 +82,55 @@ footer a {
   font-size: 0.85em;
 }
 
+.social{
+  margin-bottom:1%;
+}
+
+
+/*Home/Index Page */
+
+.home-image{
+  width: 100%;
+  height: auto;
+  padding: 2px;
+z-index: 2;
+}
+
+.image-block {
+  background-color: #fff;
+}
+
+#left,
+#middle,
+#right {
+  border: solid 2px black;
+  margin: 0px 0px;
+  padding: 5px;
+}
+
+#left-imageg,
+#middle-imageg,
+#right-imageg {
+  display: none;
+}
+
+.img-text{
+  text-align: center;
+  align-items:: center;
+  font-size: 32px;
+  color: black;
+  margin: 0;
+}
+
+
+/*Contact CSS */
+
+.error-msg {
+  visibility: hidden;
+  color: red;
+
+}
+
 input, select, textarea {
   width: 75%;
   border: 2px solid #eee;
@@ -143,13 +154,15 @@ input, select, textarea {
   border: solid 1px black;
   padding: 3px;
   margin: 5px;
-
 }
 
-.social{
-  margin-bottom:1%;
+form {
+  padding-bottom: 10px;
 }
 
+#send{
+margin: 10px 5px;
+}
 
 /* Phone screens */
 @media only screen and (max-width: 768px) {

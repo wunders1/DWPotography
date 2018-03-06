@@ -89,7 +89,7 @@
                     <input type="text" name="phone"  id="phone"/>
                     <p class="format">xxxx xxx xxx or xx xxxx xxxx format only</p>
                   </div>
-                    <p class="error-msg" id="phone-error">Please enter your phone number</p>
+                    <p class="error-msg" id="phone-error">Please enter your phone number in the required format</p>
                 </div>
                 <div>
                   <label for="reason" id="reason-title">Reason for contact:</label><br/>
@@ -144,7 +144,7 @@
               <a href="#" ><i class="fab fa-twitter"></i></a>
             </div>
             <div class="col-sm-4 copywight">
-              <h3><a class="far fa-copyright"></a> DW Photography 2018</h3>
+              <h5><a class="far fa-copyright"></a> DW Photography 2018</h5>
             </div>
           </div>
         </footer>
@@ -164,7 +164,7 @@
       let reasonFail = document.getElementById("reason-error");
       let comment = document.getElementById("enquiry");
 
-      let emailreg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
+      let emailreg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
       let phoneregm = /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
       let phonereg = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
 
@@ -195,27 +195,27 @@
 
       //test e-mail validation
       function mail(){
-        if (email.value === "") {
-        email.style.border = "2px solid red";
-        emailFail.style.visibility = "visible";
+      if (email.value.match(emailreg)) {
+        email.style.border = "2px solid #eee";
+        emailFail.style.visibility = "hidden";
         }
-        else {
-          email.style.border = "2px solid #eee";
-          emailFail.style.visibility = "hidden";
+          else {
+            email.style.border = "2px solid red";
+            emailFail.style.visibility = "visible";
         }
       }
 
       //test phone number validation
       function number(){
-        if (phoneNumber.value === ""){
-          phoneNumber.style.border = "2px solid red";
+      if (phoneNumber.value.match(phoneregm) || phoneNumber.value.match(phonereg)) {
+        phone.style.border = "2px solid #eee";
+        phoneFail.style.visibility = "hidden";
+        }
+          else {
+          phone.style.border = "2px solid red";
           phoneFail.style.visibility = "visible";
-        }
-        else {
-          phoneNumber.style.border = "2px solid #eee";
-          phoneFail.style.visibility = "hidden";
-        }
-      }
+    }
+    }
 
       //test reason validation
       function contact(){
@@ -235,7 +235,7 @@
         nameFail.style.visibility = "visible";
        }
         else {
-          irstName.style.border = "2px solid #eee";
+          firstName.style.border = "2px solid #eee";
           nameFail.style.visibility = "hidden";
         }
       if (surname.value === "") {
@@ -246,21 +246,21 @@
             surname.style.border = "2px solid #eee";
             surnameFail.style.visibility = "hidden";
           }
-      if (email.value === "") {
-        email.style.border = "2px solid red";
-        emailFail.style.visibility = "visible";
+      if (email.value.match(emailreg)) {
+        email.style.border = "2px solid #eee";
+        emailFail.style.visibility = "hidden";
         }
           else {
-            email.style.border = "2px solid #eee";
-            emailFail.style.visibility = "hidden";
+            email.style.border = "2px solid red";
+            emailFail.style.visibility = "visible";
         }
-      if(phoneNumber.value === "") {
-        phoneNumber.style.border = "2px solid red";
-        phoneFail.style.visibility = "visible";
+      if(phoneNumber.value.match(phoneregm) || phoneNumber.value.match(phonereg)) {
+        phone.style.border = "2px solid #eee";
+        phoneFail.style.visibility = "hidden";;
         }
         else {
-            phoneNumber.style.border = "2px solid #eee";
-            phoneFail.style.visibility = "hidden";
+          phone.style.border = "2px solid red";
+          phoneFail.style.visibility = "visible";
           }
       if(reason.value === "default"){
           reasonFail.style.visibility = "visible";
